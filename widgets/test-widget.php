@@ -101,13 +101,23 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base{
 			$this->add_control(
 				'alignment',
 				[
-					'label' => __( 'Alignment', 'elementortestplugin' ),
-					'type' => \Elementor\Controls_Manager::SELECT,
+					'label' => __( 'Heading Alignment', 'elementortestplugin' ),
+					'type' => \Elementor\Controls_Manager::CHOOSE,
 					'default' => 'left',
+					'toggle' => false,
 					'options' => array(
-						"left" => __("Left", "elementortestplugin"),
-						"right" => __("Right", "elementortestplugin"),
-						"center" => __("Center", "elementortestplugin")
+						"left" => [
+							"title" => __('Left', 'elementortestplugin'),
+							"icon" => 'fa fa-align-left'
+						],
+						"center" => [
+							"title" => __('Center', 'elementortestplugin'),
+							"icon" => 'fa fa-align-center'
+						],
+						"right" => [
+							"title" => __('Right', 'elementortestplugin'),
+							"icon" => 'fa fa-align-right'
+						]
 					),
 					'selectors' => [
 						"{{WRAPPER}} h1.heading" => "text-align:{{VALUE}}"
@@ -118,13 +128,27 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base{
 			$this->add_control(
 				'desc_alignment',
 				[
-					'label' => __( 'Alignment', 'elementortestplugin' ),
-					'type' => \Elementor\Controls_Manager::SELECT,
-					'default' => 'left',
+					'label' => __( 'Description Alignment', 'elementortestplugin' ),
+					'type' => \Elementor\Controls_Manager::CHOOSE,
+					'default' => false,
+					'toggle' => false,
 					'options' => array(
-						"left" => __("Left", "elementortestplugin"),
-						"right" => __("Right", "elementortestplugin"),
-						"center" => __("Center", "elementortestplugin")
+						"left" => [
+							"title" => __('Left', 'elementortestplugin'),
+							"icon" => 'fa fa-align-left'
+						],
+						"center" => [
+							"title" => __('Center', 'elementortestplugin'),
+							"icon" => 'fa fa-align-center'
+						],
+						"right" => [
+							"title" => __('Right', 'elementortestplugin'),
+							"icon" => 'fa fa-align-right'
+						],
+						"justify" => [
+							"title" => __('Justify', 'elementortestplugin'),
+							"icon" => 'fa fa-align-justify'
+						]
 					),
 					'selectors' => [
 						"{{WRAPPER}} p.description" => "text-align:{{VALUE}}"
